@@ -1,0 +1,30 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h1 class="text-center mb-4">Movie Search</h1>
+
+            <!-- Search Bar -->
+            <div class="mb-3">
+                <input type="text" class="form-control" [(ngModel)]="searchQuery" (input)="searchMovies($event)"
+                    placeholder="Search for a movie" />
+            </div>
+
+            <!-- Movie List -->
+            <div class="list-group mb-3">
+                <div *ngIf="movies.length < 1 && searchQuery != ''">
+                    <span class="text-danger text-center">No Records Found.</span>
+                </div>
+                <div *ngFor="let movie of movies" class="list-group-item">
+                    <div class="d-flex align-items-center">
+                        <img [src]="movie.posterUrl" alt="{{ movie.title }}" class="img-thumbnail me-3"
+                            style="width: 100px;" />
+                        <div>
+                            <h5>{{ movie.title }}</h5>
+                            <p class="mb-0"><strong>Release Year:</strong> {{ movie.releaseYear }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
