@@ -12,9 +12,6 @@ export class MovieService {
     constructor(private http: HttpClient) {}
 
     getMovies(query: string): Observable<Movie[]> {
-        const headers = new HttpHeaders()
-                        .set('apikey', environment.apiKey);
-
-        return this.http.get<Movie[]>(`${environment.apiUrl}?title=${query}`, {headers});
+        return this.http.get<Movie[]>(`${environment.apiUrl}?title=${query}`);
     }
 }
