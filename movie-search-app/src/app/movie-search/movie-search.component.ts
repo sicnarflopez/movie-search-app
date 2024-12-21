@@ -17,9 +17,9 @@ export class MovieSearchComponent {
 
     constructor(private movieService: MovieService) {}
 
-    searchMovies(input: any) {
+    searchMovies() {
         this.movies = [];
-        this.movieService.getMovies(input.data).subscribe(data => {
+        this.movieService.getMovies(this.searchQuery).subscribe(data => {
             this.movies = data;
         });
     }
