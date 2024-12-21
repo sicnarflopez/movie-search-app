@@ -18,8 +18,10 @@ export class MovieSearchComponent {
 
     searchMovies() {
         this.movies = [];
-        this.movieService.getMovies(this.searchQuery).subscribe(data => {
-            this.movies = data;
-        });
+        if(this.searchQuery){
+            this.movieService.getMovies(this.searchQuery).subscribe(data => {
+                this.movies = data;
+            });
+        }
     }
 }
