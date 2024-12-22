@@ -39,3 +39,37 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+### DotnetCore ###
+*.swp
+*.*~
+project.lock.json
+.DS_Store
+*.pyc
+
+# Visual Studio Code
+.vscode
+
+# Visual Studio
+.vs
+
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ignore all bin and obj folders
+**/bin/
+**/obj/
+
+# Ignore build output files
+**/*.exe
+**/*.dll
+**/*.pdb
+
+# Ignore package folders
+**/packages/
+/movie-api/.vs
+/movie-api/movie-api/bin
